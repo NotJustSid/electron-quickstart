@@ -1,0 +1,58 @@
+<div id="<%= modal.name %>-modal" class="modal animate__animated animate__fadeIn animate__faster">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="box">
+            <div class="columns is-1 is-vcentered" style="height: 70vh">
+
+                <!--! Menu Categories -->
+
+                <div class="column is-narrow modal-menu">
+                    <aside class="menu">
+
+                        <% modal.categories.forEach(category => { %>
+                         
+                            <p>
+                                <%= category.name %>
+                            </p>
+                            
+                            <ul>
+                                <% category.menus.forEach(menu => { %>
+                                    <li class="menu-list-item" data-modal-name="<%= modal.name %>" data-target-content-id="<%= modal.name %>-content-<%= (category.name + '-' + menu.name).replace(/\s/g, '-') %>" onclick="displayModalMenu(this.dataset.modalName, this.dataset.targetContentId)"> <%= menu.name %> </li>
+                                <% }) %>
+                            </ul>
+
+                        <% }) %>
+
+                    </aside>
+                </div>
+
+                <!--! Menu Content -->
+
+                <div class="column modal-menu-content-bar">
+
+                    <!--! Default -->
+                    <div id="<%= modal.name %>-content-default" style="display: none;">
+                        <%- modal.defaultContent %>
+                    </div>
+
+                    <script>
+                        document.querySelector('#render-script').addEventListener('load', ()=>{
+                            displayModalMenu("<%= modal.name %>", "<%= modal.name + "-content-default" %>") 
+                        });
+                    </script>
+
+                    <!--! Others -->
+                    
+                    <% modal.categories.forEach(category => { %>
+                        <% category.menus.forEach(menu => { %>
+                            <div id="<%= modal.name %>-content-<%= (category.name + '-' + menu.name).replace(/\s/g, '-') %>" style="display: none;">
+                                <%- menu.content %> 
+                            </div>
+                        <% }) %>
+                    <% }) %>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

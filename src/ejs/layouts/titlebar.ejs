@@ -1,0 +1,37 @@
+<div class="app-title-bar-frame"></div>
+
+<!-- Title Bar -->
+<nav id="app-title-bar" class="navbar is-dark">
+	<div class="navbar-brand">
+		<%- options.brandContent %> 
+	</div>
+
+
+	<div id="navMenu" class="navbar-menu">
+		<div class="navbar-start">
+			
+			<% options.menuIcons.forEach(iconHTML => { %>
+				<%- iconHTML %> 
+			<% }) %>
+
+		</div>
+
+		<div class="navbar-end navbar-tabs">
+			<a id="app-min-btn" class="has-text-centered navbar-item app-title-bar-action-btn app-win-control-btn">
+				<svg aria-hidden="false" width="12" height="12" viewox="0 0 12 12">
+					<circle cx="6" cy="6" r="5" fill="#f8cb36">
+				</svg>
+			</a>
+			<a id="app-max-btn" class="has-text-centered navbar-item app-title-bar-action-btn app-win-control-btn">
+				<svg aria-hidden="false" width="12" height="12" viewox="0 0 12 12">
+					<circle cx="6" cy="6" r="5" fill="#5FFF6C">
+				</svg>
+			</a>
+			<a id="app-close-btn" class="has-text-centered navbar-item app-title-bar-action-btn app-win-control-btn">
+				<svg aria-hidden="false" width="12" height="12" viewox="0 0 12 12">
+					<circle cx="6" cy="6" r="5" fill="#FC4251">
+				</svg>
+			</a>
+		</div>
+	</div>
+</nav>

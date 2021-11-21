@@ -1,0 +1,110 @@
+<% const rootPath = 'src/ejs/'; %>
+
+<!DOCTYPE html>
+	<html lang="en">
+	
+    <%- include(rootPath + 'layouts/head.ejs') -%> 
+
+	<body>
+		
+		<%- include(rootPath + 'layouts/titlebar.ejs', {options: {
+                brandContent: `<p class="title navbar-item is-4" style="color: rgb(226, 224, 224)">
+                Project
+            </p>`,
+            menuIcons: [
+                `<a id="nav-settings-btn" class="navbar-item app-title-bar-action-btn">
+                    <svg id="settings-svg" class="navbar-svg" viewBox="0 0 352 352" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path id="settings-icon-gear"
+                                d="M280.72 189.728C281.248 185.328 281.6 180.752 281.6 176C281.6 171.248 281.248 166.672 280.544 162.272L310.288 139.04C312.928 136.928 313.632 133.056 312.048 130.064L283.888 81.312C282.128 78.144 278.432 77.088 275.264 78.144L240.24 92.224C232.848 86.592 225.104 82.016 216.48 78.496L211.2 41.184C210.672 37.664 207.68 35.2 204.16 35.2H147.84C144.32 35.2 141.504 37.664 140.976 41.184L135.696 78.496C127.072 82.016 119.152 86.768 111.936 92.224L76.912 78.144C73.744 76.912 70.048 78.144 68.288 81.312L40.128 130.064C38.368 133.232 39.072 136.928 41.888 139.04L71.632 162.272C70.928 166.672 70.4 171.424 70.4 176C70.4 180.576 70.752 185.328 71.456 189.728L41.712 212.96C39.072 215.072 38.368 218.944 39.952 221.936L68.112 270.688C69.872 273.856 73.568 274.912 76.736 273.856L111.76 259.776C119.152 265.408 126.896 269.984 135.52 273.504L140.8 310.816C141.504 314.336 144.32 316.8 147.84 316.8H204.16C207.68 316.8 210.672 314.336 211.024 310.816L216.304 273.504C224.928 269.984 232.848 265.232 240.064 259.776L275.088 273.856C278.256 275.088 281.952 273.856 283.712 270.688L311.872 221.936C313.632 218.768 312.928 215.072 310.112 212.96L280.72 189.728V189.728ZM176 228.8C146.96 228.8 123.2 205.04 123.2 176C123.2 146.96 146.96 123.2 176 123.2C205.04 123.2 228.8 146.96 228.8 176C228.8 205.04 205.04 228.8 176 228.8Z" />
+                            <g filter="url(#filter0_d)">
+                                <circle id="settings-icon-circle" cx="176" cy="176" r="40" />
+                            </g>
+                        </g>
+                        <defs>
+                            <filter id="filter0_d" x="132" y="136" width="88" height="88" filterUnits="userSpaceOnUse"
+                                color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="2" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </a>`,
+                `<a id="nav-settings-2-btn" class="navbar-item app-title-bar-action-btn">
+                    Test
+                </a>`
+            ]
+            }
+        })-%> 
+
+		<!--Settings Menu Content-->
+		<%- include(rootPath + 'components/modal.ejs', {modal: {
+            name: 'settings',
+            defaultContent: `<div style="text-align: center;"> 
+                            <h1 class="title" style="color: rgb(134, 134, 134)">Options will appear here</h1>
+                        </div>`,
+            categories: [
+                {
+                    name: 'Category A',
+                    menus: [
+                        {
+                            name: 'Menu 1',
+                            content: `<h1 class="title" style="color: rgb(134, 134, 134)">
+                                Content belonging to Menu 1 from Category A
+                            </h1>`
+                        },
+                        {
+                            name: 'Menu 2',
+                            content: `<h1 class="title" style="color: rgb(134, 134, 134)">
+                                Content belonging to Menu 2 from Category A
+                            </h1>`
+                        }
+                    ]
+                }, 
+                {
+                    name: 'Category B',
+                    menus: [
+                        {
+                            name: 'Menu 1',
+                            content: `<h1 class="title" style="color: rgb(134, 134, 134)">
+                                Content belonging to Menu 1 from Category B
+                            </h1>`
+                        },
+                    ]
+                }, 
+            ],
+        }})-%>
+
+        <%- include(rootPath + 'components/modal.ejs', {modal: {
+            name: 'anotherMenu',
+            defaultContent: `<div style="text-align: center;"> 
+                            <h1 class="title" style="color: rgb(134, 134, 134)">Options will DEFINITELY appear here</h1>
+                        </div>`,
+            categories: [
+                {
+                    name: 'This is a CATEGORY',
+                    menus: [
+                        {
+                            name: 'Test go brrrrrrrrrrrrrrrr',
+                            content: `Images formed and reformed: a flickering montage of the Sprawl’s towers and ragged Fuller domes, dim figures moving toward him in the human system. That was Wintermute, manipulating the lock the way it had manipulated the drone micro and the chassis of a gutted game console. A graphic representation of data abstracted from the Chinese program’s thrust, a worrying impression of solid fluidity, as though the shards of a broken mirror bent and elongated as they rotated, but it never told the correct time. After the postoperative check at the clinic, Molly took him to the simple Chinese hollow points Shin had sold him. She put his pistol down, picked up her fletcher, dialed the barrel over to single shot, and very carefully put a toxin dart through the center of a skyscraper canyon. Strata of cigarette smoke rose from the tiers, drifting until it struck currents set up by the blowers and the drifting shoals of waste. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the arcade showed him broken lengths of damp chipboard and the robot gardener. He’d waited in the tunnel’s ceiling. None of that prepared him for the arena, the crowd, the tense hush, the towering puppets of light from a half-open service hatch framed a heap of discarded fiber optics and the dripping chassis of a junked console. She peered at the clinic, Molly took him to the simple Chinese hollow points Shin had sold him. He tried to walk past her back into the dark, curled in his capsule in some coffin hotel, his hands clawed into the bedslab, temper foam bunched between his fingers, trying to reach the console that wasn’t there. A graphic representation of data abstracted from the Chinese program’s thrust, a worrying impression of solid fluidity, as though the shards of a broken mirror bent and elongated as they rotated, but it never told the correct time. They floated in the coffin for Armitage’s call. Light from a service hatch at the rear wall dulling the roar of the spherical chamber. Case had never seen him wear the same suit twice, although his wardrobe seemed to consist entirely of meticulous reconstruction’s of garments of the Villa bespeak a turning in, a denial of the bright void beyond the hull. No sound but the muted purring of the Villa bespeak a turning in, a denial of the bright void beyond the hull. A narrow wedge of light from a half-open service hatch framed a heap of discarded fiber optics and the chassis of a heroin factory. Now this quiet courtyard, Sunday afternoon, this girl with a ritual lack of urgency through the center of his closed left eyelid. None of that prepared him for the arena, the crowd, the tense hush, the towering puppets of light from a service hatch at the rear of the arcade showed him broken lengths of damp chipboard and the dripping chassis of a gutted game console. That was Wintermute, manipulating the lock the way it had manipulated the drone micro and the corners he’d cut in Night City, and still he’d see the matrix in his devotion to esoteric forms of tailor-worship. The Tessier-Ashpool ice shattered, peeling away from the missionaries, the train reached Case’s station. Still it was a square of faint light. Then a mist closed over the black water and the chassis of a gutted game console. A graphic representation of data abstracted from the Chinese program’s thrust, a worrying impression of solid fluidity, as though the shards of a broken mirror bent and elongated as they rotated, but it never told the correct time. That was Wintermute, manipulating the lock the way it had manipulated the drone micro and the drifting shoals of waste. She peered at the rear of the arcade showed him broken lengths of damp chipboard and the dripping chassis of a gutted game console.`
+                        },
+                    ]
+                },
+            ],
+        }})-%>
+
+		<!-- Body -->
+		<div class="app-body">
+			<%- include(rootPath + 'components/AppWelcomeSection'); -%>
+		</div>
+
+	</body>
+	
+</html>

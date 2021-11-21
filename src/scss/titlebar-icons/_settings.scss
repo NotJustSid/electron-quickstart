@@ -1,0 +1,28 @@
+@use '../colors';
+
+#settings-svg {
+
+	height: 1.875rem;
+
+	#settings-icon-gear, #settings-icon-circle {
+		fill: colors.$navbar-btn-primary;
+	}
+
+}
+
+#nav-settings-btn:hover {
+	#settings-icon-gear, #settings-icon-circle {
+		fill: colors.$navbar-btn-secondary;
+	}
+	
+	#settings-icon-gear {
+		transform-origin: center;
+		animation: spin 0.5s ease-out;
+	}
+
+	@keyframes spin {
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}

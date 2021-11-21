@@ -1,0 +1,34 @@
+@use '../colors';
+
+.app-title-bar-action-btn {
+    -webkit-app-region: no-drag;
+}
+
+.app-win-control-btn {
+   position: sticky;
+   width: 46px;
+   justify-content: center;
+}
+
+#app-close-btn:hover {
+   background-color: colors.$close-btn-hover !important;
+   filter: blur(1em);
+}
+
+#app-max-btn:hover {
+   background-color: colors.$max-btn-hover !important;
+   filter: blur(1em);
+}
+
+#app-min-btn:hover {
+   background-color: colors.$min-btn-hover !important;
+   filter: blur(1em);
+}
+
+.navbar-start >.navbar-item.app-title-bar-action-btn {
+   color: rgb(226, 224, 224) !important;
+}
+
+.navbar-start >.navbar-item.app-title-bar-action-btn:first-child {
+   margin-left: 10px;
+}
